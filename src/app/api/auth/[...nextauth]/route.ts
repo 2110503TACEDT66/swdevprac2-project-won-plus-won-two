@@ -1,9 +1,10 @@
-import NextAuth from "next-auth/next";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import { AuthOptions } from "next-auth";
 import CredentialsProvider  from "next-auth/providers/credentials";
 import userLogin from "@/libs/userLogIn";
 
-export const authOptions:AuthOptions = {
+
+export const authOptions:NextAuthOptions = {
     providers: [
         CredentialsProvider({
             // The name to display on the sign in form (e.g. "Sign in with...")
