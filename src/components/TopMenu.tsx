@@ -18,13 +18,24 @@ export default async function TopMenu() {
                     width={0} height={0} sizes='100vh'/>
                 </Link>
                 <TopMenuItem title='Restaurants' pageRef='/car' />
-                <TopMenuItem title='Reservation' pageRef='/reservations' />
+                <TopMenuItem title='My Reservation' pageRef='/reservations' />
                 <TopMenuItem title='about' pageRef='/about' />
             </div>
             
 
             <div className='flex flex-row absolute right-0 h-full'>
             <TopMenuItem title='Cart' pageRef='/cart' />
+            {
+                session? ""
+                : <Link href="/register" >
+                    <div className='flex items-center h-full px-2 text-sm'>
+                        <button className="block rounded-md bg-lime-700 hover:bg-lime-950 px-3 py-2 text-white ">
+                            Register
+                        </button>
+                    </div>
+                        
+                </Link>
+            }
             {
                 session? <Link href="/api/auth/signout">
                     <div className='flex items-center h-full px-2 text-sm'>
