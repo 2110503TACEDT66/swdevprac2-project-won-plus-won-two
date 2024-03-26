@@ -1,10 +1,10 @@
-
 import getCar from "@/libs/getCar"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/app/api/auth/[...nextauth]/route"
 import getUserProfile from "@/libs/getUserProfile"
 import reservation from "@/libs/reservation"
 import { redirect } from "next/navigation"
+import ReviewCatalog from "@/components/ReviewCatalog"
 
 
 export default async function CarDetailPage( {params}:{params:{cid:string}}) {
@@ -43,7 +43,8 @@ export default async function CarDetailPage( {params}:{params:{cid:string}}) {
                             text-gray-700 focus:outline-none focus:border-blue-400"/>
                     </div>
                     <button type="submit" className="block rounded-md bg-red-800 hover:bg-red-400 px-3 py-2 text-white">Make Reservation</button>
-                </form>
+            </form>
+            
         </main>
     )
 }

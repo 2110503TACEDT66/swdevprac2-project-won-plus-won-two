@@ -14,7 +14,6 @@ export default function Car() {
             <Suspense fallback={<p>Loading... <LinearProgress/></p>}>
             <CarCatalog carJson={cars}/>
             </Suspense>
-
         </main>
     )
 }

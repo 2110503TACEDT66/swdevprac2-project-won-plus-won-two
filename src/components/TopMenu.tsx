@@ -4,11 +4,16 @@ import TopMenuItem from './TopMenuItem';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { Link } from '@mui/material';
+import getUserProfile from '@/libs/getUserProfile';
 
 
 export default async function TopMenu() {
 
     const session = await getServerSession(authOptions)
+    if(!session || !session.user.token) return null
+
+    const profile = await getUserProfile(session.user.token)
+    var createdAt = new Date(profile.data.createdAt)
     
     return (
         <div className={"fixed top-0 left-0 right-0 bg-slate-950 h-16 z-30 border border-gray-300 flex gap-5 flex-row-reverse"}>
@@ -19,7 +24,10 @@ export default async function TopMenu() {
                 </Link>
                 <TopMenuItem title='Restaurants' pageRef='/car' />
                 <TopMenuItem title='My Reservation' pageRef='/reservations' />
-                <TopMenuItem title='about' pageRef='/about' />
+                {
+                    (profile.data.role=="admin")?<TopMenuItem title='add Restaurant' pageRef='/addRestaurant' />:""
+                }
+
             </div>
             
 

@@ -10,7 +10,7 @@ export default async function ReservationCatalog({carJson}:{carJson:object}) {
                 {
                     carJsonReady.data.map((carItem:object)=>(
                         <div className="w-[100%] sm:w-[50%] md:w-[30%] lg:w-[25%] p-2 sm:p-4 md:p-4 lg:p-8">   
-                            <ReservationCard rsvDate={carItem.rsvDate} user={carItem._id}  restaurant={carItem.restaurant} createdAt={carItem.createdAt}/>          
+                            <ReservationCard rsvDate={carItem.rsvDate} user={carItem._id}  restaurant={carItem.restaurant} createdAt={carItem.createdAt} rsvID={carItem._id}/>          
                         </div>
                     ))
                 }
