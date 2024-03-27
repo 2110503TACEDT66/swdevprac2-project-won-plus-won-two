@@ -2,11 +2,11 @@ import getCars from "@/libs/getCars"
 import CarCatalog from "@/components/CarCatalog"
 import { Suspense } from "react"
 import { LinearProgress } from "@mui/material"
-import CarPanel from "@/components/CarPanel"
+import { RestaurantJson } from "../../../../interfaces"
 
-export default function Car() {
+export default async function Car() {
 
-    const cars = getCars()
+    const cars:RestaurantJson = await getCars()
 
     return (
         <main className="text-center p-5 ">
