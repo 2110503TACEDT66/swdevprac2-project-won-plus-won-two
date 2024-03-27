@@ -4,7 +4,7 @@ import { authOptions } from "@/libs/auth";
 import getUserProfile from "@/libs/getUserProfile"
 import reservation from "@/libs/reservation"
 import { redirect } from "next/navigation"
-import ReviewCatalog from "@/components/ReviewCatalog"
+
 
 
 export default async function CarDetailPage( {params}:{params:{cid:string}}) {
