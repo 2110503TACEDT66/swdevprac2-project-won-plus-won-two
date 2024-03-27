@@ -1,7 +1,7 @@
 export interface ReservationItem {
     rsvDate: string,
     _id: string,
-    restaurant: string,
+    restaurant: RestaurantItem,
     createdAt: string,
     id: string
    
