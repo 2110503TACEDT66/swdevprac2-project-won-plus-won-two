@@ -1,11 +1,10 @@
 export interface ReservationItem {
-    carID: string,
-    carModel: string,
-    numOfDate: number,
-    pickupDate: string,
-    pickupLocation: string,
-    returnDate: string,
-    retrunLocation: string
+    rsvDate: string,
+    _id: string,
+    restaurant: string,
+    createdAt: string,
+    id: string
+   
 }
 export interface ReservationJson{
     success: boolean,
