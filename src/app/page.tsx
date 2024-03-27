@@ -5,10 +5,10 @@ import CarCatalog from '@/components/CarCatalog';
 import getCars from "@/libs/getCars"
 import { Suspense } from "react"
 import { LinearProgress } from "@mui/material"
+import { RestaurantJson } from '../../interfaces';
 
-
-export default function Home() {
-  const cars = getCars()
+export default async function Home() {
+  const cars:RestaurantJson = await getCars()
   return (
     <main>
       <Banner/>
